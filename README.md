@@ -15,7 +15,6 @@ The application can create marketing campaigns, generate marketing text using Gr
 * Support multiple campaigns
 * REST API using FastAPI
 * Logging support
-* Docker support
 
 ## Technology Stack
 
@@ -54,7 +53,6 @@ ai-marketing-automation/
 │   └── main.py
 ├── .env.example
 ├── .gitignore
-├── Dockerfile
 ├── README.md
 └── requirements.txt
 ```
