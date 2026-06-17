@@ -35,7 +35,10 @@ class GroqMarketingTextGenerator:
                 max_completion_tokens=150,
             )
             text = response.choices[0].message.content
-            return text.strip() if text else self.fallback.generate(prompt)
+            if not text:
+                return self.fallback.generate(prompt)
+            return text.strip().strip('"').strip("'")
+
         except Exception as exc:
             logger.exception("Groq text generation failed")
             return self.fallback.generate(prompt)
